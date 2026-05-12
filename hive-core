@@ -1,5 +1,5 @@
-[ "$_hive-core_loaded" ] && return 0
-_hive-core_loaded=1
+[ "$_hivecore_loaded" ] && return 0
+_hivecore_loaded=1
 
 # ── Shared Fly transport primitives ──────────────────────────────
 # Used by: flexed, fujy, swarmpass, hive
