@@ -1,5 +1,5 @@
-[ "$_hivecore_loaded" ] && return 0
-_hivecore_loaded=1
+[ "$_flugcore_loaded" ] && return 0
+_flugcore_loaded=1
 
 # ── Shared completion helper ──────────────────────────────────────
 # Usage: _fly_complete <target-listing-function>
@@ -14,7 +14,7 @@ _fly_complete()
 }
 
 # ── Shared Fly transport primitives ──────────────────────────────
-# Used by: flexed, fujy, swarmpass, hive
+# Used by: flexed, fujy, swarmpass, flug
 
 _fly_transport_prepare()
 {
@@ -28,11 +28,11 @@ _fly_transport_prepare()
     : "${_fly_uuid:=$(cat "$FLY_HOME/.fly.d/.flyuuid" 2>/dev/null || uuidgen)}"
 
     command -v "$tool" >/dev/null 2>&1 || {
-        echo "hive-core: $tool command not found" >&2
+        echo "flug-core: $tool command not found" >&2
         return 1
     }
     type _fly_pkg_warp >/dev/null 2>&1 || {
-        echo "hive-core: load Fly first (. ~/.fly.d/fly source)" >&2
+        echo "flug-core: load Fly first (. ~/.fly.d/fly source)" >&2
         return 1
     }
 
